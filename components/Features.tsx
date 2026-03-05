@@ -4,18 +4,21 @@ const features = [
     title: "Smart Ratings",
     description:
       "Not a star slider. Compare cities head-to-head and build a ranked list that actually means something. Unlocks after 5 cities.",
+    image: "/screenshots/citylist.png",
   },
   {
     number: "02",
     title: "Your Map",
     description:
       "Every city you've visited or want to visit, pinned on an interactive world map. Track cities, countries, and continents at a glance.",
+    image: "/screenshots/homeview.png",
   },
   {
     number: "03",
     title: "Community",
     description:
       "See the world's top-rated cities and countries by the community. Follow travelers, share trips, and discover where the well-traveled go.",
+    image: "/screenshots/feedview.png",
   },
 ];
 
@@ -30,7 +33,7 @@ export default function Features() {
 
         {/* 3-column grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
-          {features.map(({ number, title, description }) => (
+          {features.map(({ number, title, description, image }) => (
             <div key={number} className="flex flex-col">
               {/* Editorial number */}
               <span
@@ -50,8 +53,15 @@ export default function Features() {
                 {description}
               </p>
 
-              {/* Screenshot placeholder */}
-              <div className="mt-auto rounded-2xl bg-dark/6 aspect-[4/3] w-full" />
+              {/* Phone frame */}
+              <div className="mt-auto flex justify-center">
+                <div
+                  className="relative rounded-[36px] border-[6px] border-dark shadow-xl overflow-hidden"
+                  style={{ width: "200px", background: "#1a1a1a" }}
+                >
+                  <img src={image} alt={title} className="w-full block" />
+                </div>
+              </div>
             </div>
           ))}
         </div>
