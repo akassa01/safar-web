@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Barlow_Condensed, Inter } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 const barlowCondensed = Barlow_Condensed({
   variable: "--font-barlow-condensed",
@@ -31,6 +32,7 @@ export default function RootLayout({
         className={`${barlowCondensed.variable} ${inter.variable} antialiased`}
       >
         {children}
+		<Analytics/>
       </body>
     </html>
   );
