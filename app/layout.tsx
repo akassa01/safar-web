@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Barlow_Condensed, Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next"
+import { APP_STORE_ID } from "@/lib/appStore";
 
 const barlowCondensed = Barlow_Condensed({
   variable: "--font-barlow-condensed",
@@ -19,6 +20,8 @@ export const metadata: Metadata = {
   title: "Safar — The Social Travel Journal",
   description:
     "Track every city you visit, log the places you love, and see recommendations from travelers you actually trust.",
+  // Smart App Banner: shows an "Open/View" banner atop the site in mobile Safari.
+  itunes: { appId: APP_STORE_ID },
 };
 
 export default function RootLayout({
