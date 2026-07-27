@@ -11,6 +11,8 @@ const AASA = {
         appIDs: ["FGW6Q324TL.com.armankassam.Safar"],
         components: [
           { "/": "/u/*/city/*", comment: "Shared city — opens the sharer's trip" },
+          { "/": "/place/*", comment: "Shared place (catalog id) — opens the place sheet" },
+          { "/": "/place", comment: "Shared place (name+coords fallback) — opens the place sheet" },
         ],
       },
     ],
